@@ -1,0 +1,9 @@
+elpa/
+.recentf
+.recentf~
+.smex-items
+auto-save-list/
+cache/
+init.el~
+projectile-bookmarks.el
+transient/
