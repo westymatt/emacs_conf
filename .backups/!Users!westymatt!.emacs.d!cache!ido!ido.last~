@@ -1,0 +1,47 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/westymatt/Projects/" . "subspace/")
+ ("/Users/westymatt/" . ".emacs.d/")
+ ("/Users/westymatt/.emacs.d/" . "auto-save-list/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/westymatt/.emacs.d/"
+ "/Users/westymatt/.emacs.d/packages/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "load-packages.el"
+ ".gitignore"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/westymatt/.emacs.d/" (24269 55530 333063 81000) ".recentf~" ".smex-items" "themes/" ".git/" "elpa/" ".backups/" "packages/" ".gitignore" ".recentf" "init.el" "auto-save-list/" "transient/" "projectile-bookmarks.eld" "cache/" "init.el~" "../" "./")
+
+ ("/Users/westymatt/" (24269 55607 427592 825000) ".viminfo" ".gitconfig" "Downloads/" ".oh-my-zsh/" "Documents/" ".npm/" ".Trash/" ".profile" "Applications/" "Movies/" ".rustup/" "AppData/" "Public/" ".cargo/" ".node_repl_history" ".emacs.d/" "Library/" "Desktop/" ".zsh_history" ".zcompdump-Matt’s MacBook Pro-5.7.1" ".zprofile" "Pictures/" "Projects/" ".local/" ".zcompdump-Matt’s MacBook Pro-5.8" ".nvimlog" ".zshrc" ".CFUserTextEncoding" "osx-setup.sh" ".DS_Store" "Music/" ".config/" "../" "./")
+
+ ("/Users/westymatt/Projects/subspace/src/" (24269 55620 625583 710000) "main.rs" ".#main.rs" "ecs/" "game_state.rs" "scenes/" "scene.rs" "../" "./")
+
+ ("/Users/westymatt/Projects/subspace/src/scenes/" (24269 18080 508136 291000) "level1_scene.rs" "mod.rs" "title_scene.rs" "../" "./")
+
+ ("/Users/westymatt/Projects/subspace/src/ecs/" (24262 63656 164992 695000) "entities/" "systems/" "mod.rs" "components/" "../" "./")
+
+ ("/Users/westymatt/Projects/subspace/src/ecs/components/" (24264 31235 813936 506000) "sprite.rs" "texture2d.rs" "velocity2d.rs" "transform2d.rs" "mod.rs" "../" "./")
+
+ ("/Users/westymatt/.emacs.d/packages/" (24269 16901 884672 292000) "../" "./")
+
+ ("/Users/westymatt/Projects/subspace/" (24263 7320 990455 645000) "src/" ".git/" ".gitignore" "Cargo.lock" "resources/" "target/" "Cargo.toml" "../" "./")
+
+ ("/Users/westymatt/Projects/" (24263 8412 365157 797000) "rust-analyzer/" "subspace/" "dotfiles/" "../" "./")
+
+ ("/Users/westymatt/.emacs.d/auto-save-list/" (24268 36830 327079 840000) ".saves-23490-Matts-MacBook-Pro.local~" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

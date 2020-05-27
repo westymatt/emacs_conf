@@ -1,8 +1,24 @@
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; EMACS CONFIGURATION ;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;
+;; USER INFORMATION
+;;
+
 (setq user-full-name "Matt Westerburg"
       user-mail-address "matt@headerodoxy.com")
 
+;;
+;; PERFORMANCE TWEAKS
+;;
+
 (setq gc-cons-threshold 50000000)
 (setq large-file-warning-threshold 100000000)
+
+;;
+;; USE-PACKAGE SETUP
+;;
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -16,6 +32,10 @@
 
 (eval-when-compile (require 'use-package))
 
+;;
+;; UI CONFIGURATION
+;;
+
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
@@ -28,6 +48,51 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq inhibit-startup-screen t)
 (set-default 'truncate-lines t)
+(display-time-mode t)
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(global-auto-revert-mode 1)
+(setq echo-keystrokes 0.1)
+(auto-compression-mode t)
+(transient-mark-mode 1)
+(make-variable-buffer-local 'transient-mark-mode)
+(put 'transient-mark-mode 'permanent-local t)
+(setq-default transient-mark-mode t)
+(setq enable-recursive-minibuffers t)
+
+;; theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'synthwave t)
+
+;;
+;; EDITOR CONFIGURATION
+;;
+
+(setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
+(setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
+
+;; Dired
+(defvar global-auto-revert-non-file-buffers)
+(setq global-auto-revert-non-file-buffers t)
+
+(defvar auto-revert-verbose)
+(setq auto-revert-verbose nil)
+
+;;
+;; PACKAGES
+;;
+
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
+
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
 
 (use-package magit
   :ensure t)
@@ -36,6 +101,30 @@
   :ensure t
   :config
   (editorconfig-mode 1))
+
+(use-package avy
+  :ensure t)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+;; (use-package vterm
+;;   :ensure t)
+
+(use-package general
+  :ensure t
+  :config
+  (general-define-key
+   "M-x" 'smex)
+  (defconst leader-key "C-c")
+  (general-create-definer leader-def :prefix leader-key)
+  (leader-def
+    "f" 'counsel-projectile-find-file    
+    "p" 'counsel-projectile-switch-project
+    "r" 'counsel-projectile-r
+    "a" 'counsel-projectile-ag
+    "b" 'counsel-projectile-switch-to-buffer))
 
 (use-package ivy
   :ensure t
@@ -61,6 +150,9 @@
 (use-package counsel
   :ensure t)
 
+(use-package counsel-projectile
+  :ensure t)
+
 (use-package swiper
   :ensure t)
 
@@ -76,42 +168,48 @@
 	(evil-mode 0)))
 
 (use-package god-mode
-  :disabled t
   :ensure t
+  :disabled t
   :defer t
   :init
   (god-mode-all)
   (setq
-   god-exempt-major-modes '(dired-mode grep-mode vc-annotate-mode eshell-mode shell-mode neotree-mode)
+   god-exempt-major-modes '(dired-mode grep-mode vc-annotate-mode eshoell-mode shell-mode neotree-mode)
    god-exempt-predicates (list #'god-exempt-mode-p))
   :config
   (progn
 	(global-set-key (kbd "<escape>") 'god-local-mode)
 	))
 
-;; (use-package neotree
-;;   :ensure t
-;;   :defer t
-;;   :config
-;;   (progn
-;;     (setq projectile-switch-project-action 'neotree-projectile-action)))
-
-(use-package powerline
-  :ensure t
-  :init
-  (powerline-center-theme))
-(add-hook 'after-init-hook 'powerline-reset)
-
-(use-package expand-region
+(use-package neotree
   :ensure t
   :defer t
-  :bind ("C-=" . er/expand-region))
+  :config
+  (progn
+    (setq projectile-switch-project-action 'neotree-projectile-action)))
+
+;; (use-package powerline
+;;   :ensure t
+;;   :init
+;;   (powerline-center-theme))
+;; (add-hook 'after-init-hook 'powerline-reset)
+
+;; (use-package expand-region
+;;   :ensure t
+;;   :defer t
+;;   :bind ("C-=" . er/expand-region))
 
 (use-package projectile
   :ensure t
   :config
+  (setq projectile-require-project-root nil)
+  (setq projectile-globally-ignored-directories
+	(cl-union projectile-globally-ignored-directories
+		  '(".git" "node_modules" "target")))
   (define-key projectile-command-map (kbd "C-x p") 'projectile-command-map)
-  (projectile-mode +1))
+  (setq projectile-project-search-path '("~/Projects/"))
+  (setq projectile-completion-system 'ivy)
+  (projectile-mode))
 
 (use-package company
   :ensure t
@@ -177,7 +275,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-lsp lsp-ui lsp-mode company rust-mode use-package))))
+    (tide company-lsp lsp-ui lsp-mode company rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -192,5 +290,24 @@
   :commands company-lsp
   :config (push 'company-lsp company-backends))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'cyberpunk-2019 t)
+(defun setup-tide-mode ()
+"Setup function for tide."
+(interactive)
+(tide-setup)
+(flycheck-mode +1)
+(setq flycheck-check-syntax-automatically '(save mode-enabled))
+(eldoc-mode +1)
+(tide-hl-identifier-mode +1)
+(company-mode +1))
+
+(use-package tide
+  :ensure t
+  :config
+  (defvar company-tooltip-align-annotations)
+  (setq company-tooltip-align-annotations t)
+  (add-hook 'js-mode-hook #'setup-tide-mode))
+
+;;
+;; KEYMAP CONFIGURATION
+;;
+
