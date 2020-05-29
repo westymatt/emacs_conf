@@ -35,10 +35,11 @@
 ;;
 ;; UI CONFIGURATION
 ;;
-
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (toggle-scroll-bar -1)
+      (tool-bar-mode -1)))
 (global-hl-line-mode +1)
 (blink-cursor-mode -1)
 (line-number-mode +1)
@@ -70,7 +71,7 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
 (setq auto-save-file-name-transforms
-          `((".*" ,temporary-file-directory t)))
+      `((".*" ,temporary-file-directory t)))
 
 ;; Dired
 (defvar global-auto-revert-non-file-buffers)
@@ -138,7 +139,7 @@
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
   (setq ivy-use-virtual-buffers t)
   ;; number of result lines to display
-  (setq ivy-height 10)
+  (setq ivy-height 15)
   ;; does not count candidates
   (setq ivy-count-format "")
   ;; no regexp by default
@@ -194,16 +195,16 @@
   (progn
     (setq projectile-switch-project-action 'neotree-projectile-action)))
 
-;; (use-package powerline
-;;   :ensure t
-;;   :init
-;;   (powerline-center-theme))
-;; (add-hook 'after-init-hook 'powerline-reset)
+(use-package powerline
+ :ensure t
+ :init
+ (powerline-center-theme))
+(add-hook 'after-init-hook 'powerline-reset)
 
-;; (use-package expand-region
-;;   :ensure t
-;;   :defer t
-;;   :bind ("C-=" . er/expand-region))
+(use-package expand-region
+   :ensure t
+   :defer t
+   :bind ("C-=" . er/expand-region))
 
 (use-package projectile
   :ensure t
@@ -281,7 +282,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (tide company-lsp lsp-ui lsp-mode company rust-mode use-package))))
+    (rjsx-mode tide company-lsp lsp-ui lsp-mode company rust-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -307,11 +308,18 @@
 (company-mode +1))
 
 (use-package tide
-  :ensure t
-  :config
-  (defvar company-tooltip-align-annotations)
-  (setq company-tooltip-align-annotations t)
-  (add-hook 'js-mode-hook #'setup-tide-mode))
+ :ensure t
+ :config
+ (defvar company-tooltip-align-annotations)
+ (setq company-tooltip-align-annotations t)
+ (add-hook 'js-mode-hook #'setup-tide-mode))
+
+(use-package rjsx-mode
+ :ensure t
+ :config
+ (setq indent-tabs-mode nil)
+ (setq js-indent-level 2)
+ (setq js2-strict-missing-semi-warning nil))
 
 ;;
 ;; KEYMAP CONFIGURATION
