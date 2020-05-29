@@ -124,7 +124,8 @@
     "p" 'counsel-projectile-switch-project
     "r" 'counsel-projectile-r
     "a" 'counsel-projectile-ag
-    "b" 'counsel-projectile-switch-to-buffer))
+    "b" 'counsel-projectile-switch-to-buffer
+    "s" 'swiper))
 
 (use-package ivy
   :ensure t
@@ -180,6 +181,11 @@
   (progn
 	(global-set-key (kbd "<escape>") 'god-local-mode)
 	))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 (use-package neotree
   :ensure t

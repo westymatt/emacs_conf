@@ -1,1 +1,1 @@
-("~/Projects/subspace/" "~/Projects/rust-analyzer/" "~/.emacs.d/")
+("~/Projects/subspace/" "~/.emacs.d/" "~/Projects/rust-analyzer/")
