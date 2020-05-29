@@ -1,0 +1,34 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/a6000739/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/a6000739/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/a6000739/.emacs.d/" (24273 13609 201127 181000) ".smex-items" "themes/" ".git/" "elpa/" ".gitignore" ".recentf" "init.el" "auto-save-list/" "transient/" "projectile-bookmarks.eld" "smex-items" "../" "./")
+
+ ("/Users/a6000739/" (24273 11134 657518 182000) ".viminfo" ".bash_history" ".binctl/" ".gitconfig" ".cache/" ".python_history" "Downloads/" ".oh-my-zsh/" ".gem/" ".bash_profile" ".vscode/" "Documents/" ".npm/" ".react-native-cli/" "dev/" ".Trash/" ".gradle/" ".profile" "Applications/" ".vimrc" "Movies/" ".zcompdump-MACC02V800EHTD7-5.3" ".ssh/" "AppData/" ".cisco/" "Public/" ".zcompdump-MACC02V800EHTD7-5.7.1" ".bash_sessions/" ".cups/" ".cocoapods/" ".android/" ".emacs.d/" ".emulator_console_auth_token" ".doom.d/" ".electron/" ".npmrc" "Library/" "Desktop/" ".zsh_history" ".nvm/" ".zprofile" ".shell.pre-oh-my-zsh" "Pictures/" "Projects/" ".local/" ".zshrc" ".zshrc.pre-oh-my-zsh" ".bashrc" ".subversion/" ".CFUserTextEncoding" ".yarnrc" ".DS_Store" ".anyconnect" ".node-gyp/" "Music/" ".config/" "../" "./")
+
+ ("/Users/a6000739/Projects/" (24227 26523 444232 743000) "sc-mini-header-footer/" "x/" "backup/" "testy/" "cart/" "node_modules/" "testapp-ios/" "sc-react-sign-on/" "test/" "native/" "previous/" ".DS_Store" "checkout-classic/" "three-d-secure-client-tools/" "../" "./")
+
+ ("/Users/a6000739/Projects/checkout-classic/" (24270 37165 892906 532000) "src/" "frontend-19.41.36-SNAPSHOT.jar" ".eslintrc.json" "postcss.config.js" ".vscode/" ".git/" ".eslintignore" "webpack-native.config.js" "lib/" "scripts/" "static/" "frontend-19.41.36-SNAPSHOT.pom" "package.json" "package-lock.json" ".gitignore" "babel.config.js" "README.MD" "webpack.config.js" "node_modules/" "jest.config.js" "bin/" ".DS_Store" ".githooks/" "__mocks__/" "jsconfig.json" "frontend-19.41.36-SNAPSHOT.war" ".npmignore" "../" "./")
+
+ ("/Users/a6000739/Projects/checkout-classic/src/" (24262 37462 662123 775000) "checkout.js" "store/" "helpers/" "event-manager/" "readers/" "routes.js" "main.jsx" "static/" "components/" "gift-card-balance/" "validations/" "checkout-debug/" "freemarker/" "images/" "test-data/" "native/" ".DS_Store" "ducks/" "gift-card-corporate/" "../" "./")
+
+ ("/Users/a6000739/Projects/checkout-classic/src/ducks/" (24262 37462 760367 603000) "donation.js" "thank-you.js" "hydration.js" "xbox-all-access/" "gift.js" "cia-native.js" "index.native.js" "global.native.js" "payment.js" "errors.js" "commerce-multivariant.js" "__tests__/" "customer.js" "router.js" "payment-native.js" "payup.js" "router.native.js" "carrier-transaction.js" "index.js" "cia.js" "fulfillment/" "pwp.js" "ui-web.js" "port-in.js" "user.js" "ui.js" "activated-devices.js" "order.js" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

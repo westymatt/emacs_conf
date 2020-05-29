@@ -1,1 +1,1 @@
-("~/Projects/three-d-secure-client-tools/" "~/Projects/testapp-ios/" "~/Projects/sc-react-sign-on/" "~/Projects/sc-mini-header-footer/" "~/Projects/checkout-classic/" "~/Projects/cart/" "~/.emacs.d/")
+("~/.emacs.d/" "~/Projects/three-d-secure-client-tools/" "~/Projects/testapp-ios/" "~/Projects/sc-react-sign-on/" "~/Projects/sc-mini-header-footer/" "~/Projects/checkout-classic/" "~/Projects/cart/")

@@ -71,7 +71,7 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
 (setq auto-save-file-name-transforms
-          `((".*" ,temporary-file-directory t)))
+      `((".*" ,temporary-file-directory t)))
 
 ;; Dired
 (defvar global-auto-revert-non-file-buffers)
@@ -138,7 +138,7 @@
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
   (setq ivy-use-virtual-buffers t)
   ;; number of result lines to display
-  (setq ivy-height 10)
+  (setq ivy-height 15)
   ;; does not count candidates
   (setq ivy-count-format "")
   ;; no regexp by default
