@@ -93,6 +93,7 @@
 (use-package which-key
   :ensure t
   :config
+  (which-key-setup-side-window-bottom)
   (which-key-mode))
 
 (use-package magit
@@ -123,9 +124,10 @@
   (leader-def
     "f" 'counsel-projectile-find-file    
     "p" 'counsel-projectile-switch-project
-    "r" 'counsel-projectile-r
+    "r" 'counse≈OAl-projectile-r
     "a" 'counsel-projectile-ag
     "b" 'counsel-projectile-switch-to-buffer
+    "n" 'neotree-toggle
     "s" 'swiper))
 
 (use-package ivy
