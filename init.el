@@ -65,6 +65,13 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'synthwave t)
 
+;; font
+(set-face-attribute 'default nil
+		    :family "Iosevka Fixed Slab"
+		    :height 130
+		    :weight 'normal
+		    :width 'normal)
+
 ;;
 ;; EDITOR CONFIGURATION
 ;;
