@@ -60,6 +60,7 @@
 (put 'transient-mark-mode 'permanent-local t)
 (setq-default transient-mark-mode t)
 (setq enable-recursive-minibuffers t)
+(setq visible-bell t)
 
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -67,7 +68,7 @@
 
 ;; font
 (set-face-attribute 'default nil
-		    :family "Iosevka Fixed Slab"
+		    :family "Iosevka Light"
 		    :height 130
 		    :weight 'normal
 		    :width 'normal)
