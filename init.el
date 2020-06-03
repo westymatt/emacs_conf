@@ -327,3 +327,8 @@
 ;; KEYMAP CONFIGURATION
 ;;
 
+;;
+;; LOAD LOCAL CONFIGURATION
+;;
+(if (file-exists-p "~/.emacs.d/local.el")
+    (load-file "~/.emacs.d/local.el"))
