@@ -64,7 +64,7 @@
 
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'synthwave t)
+(load-theme 'cherry-blossom t)
 
 ;; font
 (set-face-attribute 'default nil
